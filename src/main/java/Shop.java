@@ -28,5 +28,20 @@ public class Shop {
         instrument.setDiscountPrice();
     }
 
+    public double getTotalProfit() {
+        double totalProfit = 0;
+        for (ISell item : this.stock){
+            totalProfit += item.calculateMarkup();
+        }
+        return totalProfit;
+    }
 
+    public double getTotalDiscountProfit() {
+        double totalDiscountProfit = 0;
+        for (ISell item : this.stock){
+            applyDiscount(item);
+            totalDiscountProfit += item.calculateMarkup();
+        }
+        return totalDiscountProfit;
+    }
 }

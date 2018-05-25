@@ -19,7 +19,7 @@ public class ShopTest {
     public void before(){
         shop = new Shop();
         glockenspiel = new Glockenspiel("titanium", "blue", InstrumentType.PERCUSSION, 20.20, 100, mallet);
-        triangle = new Triangle("steel", "silver", InstrumentType.PERCUSSION, 12.00, 15.00);
+        triangle = new Triangle("steel", "silver", InstrumentType.PERCUSSION, 12.00, 15.00, mallet);
         mallet = new Mallet(15, 20, AccessoryType.MALLET, "Aqua", 12);
     }
 
@@ -42,6 +42,33 @@ public class ShopTest {
         shop.applyDiscount(glockenspiel);
         assertEquals(80, glockenspiel.getRPrice(), 1);
 
+    }
+
+    @Test
+    public void canGetTotalProfit(){
+        shop.addStock(glockenspiel);
+      assertEquals(79.8, shop.getTotalProfit(), 1);
+    }
+
+    @Test
+    public void canGetTotalDiscountProfit__triangle(){
+        shop.addStock(triangle);
+        assertEquals(0, shop.getTotalDiscountProfit(), 1);
+
+    }
+
+    @Test
+    public void canGetTotalDiscountProfit__glockenspiel(){
+        shop.addStock(glockenspiel);
+        assertEquals(59.8, shop.getTotalDiscountProfit(), 1);
+
+    }
+
+    @Test
+    public void canGetTotalDiscountProfit__multipleItems(){
+        shop.addStock(glockenspiel);
+        shop.addStock(triangle);
+        assertEquals(59.8, shop.getTotalDiscountProfit(), 1);
     }
 
 }
