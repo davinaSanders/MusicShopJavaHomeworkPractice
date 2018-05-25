@@ -9,13 +9,7 @@ public class Glockenspiel extends Instrument {
         super(material, colour, type, wPrice, rPrice);
     }
 
-    public String play (String sound){
-        return "I am playing " + sound;
-    }
 
-    public double calculateMarkup(){
-        return this.getRPrice() - this.getWPrice();
-    }
 
 }
 

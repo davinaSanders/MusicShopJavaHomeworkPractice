@@ -51,4 +51,15 @@ public class GlockenspielTest {
     public void canCalculateMarkUp(){
         assertEquals(48.1, glockenspiel.calculateMarkup(), 1);
     }
+
+    @Test
+    public void canGetDiscountPrice(){
+        assertEquals(70.88, glockenspiel.getDiscountPrice(), 1);
+    }
+
+    @Test
+    public void canSetDiscountPrice(){
+        glockenspiel.setDiscountPrice();
+        assertEquals(70.88, glockenspiel.getRPrice(), 1);
+    }
 }
