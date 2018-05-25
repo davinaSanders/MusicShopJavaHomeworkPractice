@@ -1,6 +1,6 @@
 package Stock.Accessories;
 
-public class Bow extends Accessory {
+public class Bow extends Accessory{
     private String origin;
     private int width;
 
