@@ -36,12 +36,12 @@ public abstract class Instrument implements IPlay, ISell {
         return this.rPrice;
     }
 
-    public double getDiscountPrice(){
+    public double getTwentyDiscountPrice(){
         return this.rPrice * 0.8;
     }
 
     public void setDiscountPrice() {
-        this.rPrice = getDiscountPrice();
+        this.rPrice = getTwentyDiscountPrice();
     }
 
     public String play (String sound){

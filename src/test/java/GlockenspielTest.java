@@ -1,3 +1,5 @@
+import Stock.Accessories.AccessoryType;
+import Stock.Accessories.Mallet;
 import Stock.Instrument;
 import Stock.InstrumentType;
 import Stock.PercussionInstruments.Glockenspiel;
@@ -8,11 +10,12 @@ import static org.junit.Assert.assertEquals;
 
 public class GlockenspielTest {
     Glockenspiel glockenspiel;
+    Mallet mallet;
 
     @Before
     public void before(){
-        glockenspiel = new Glockenspiel("metal", "silver", InstrumentType.PERCUSSION, 40.50, 88.60);
-
+        glockenspiel = new Glockenspiel("metal", "silver", InstrumentType.PERCUSSION, 40.50, 88.60, mallet);
+        mallet = new Mallet(5, 6.5, AccessoryType.MALLET, "Pink", 8);
     }
 
 
@@ -53,8 +56,8 @@ public class GlockenspielTest {
     }
 
     @Test
-    public void canGetDiscountPrice(){
-        assertEquals(70.88, glockenspiel.getDiscountPrice(), 1);
+    public void canGetTwentyDiscountPrice(){
+        assertEquals(70.88, glockenspiel.getTwentyDiscountPrice(), 1);
     }
 
     @Test

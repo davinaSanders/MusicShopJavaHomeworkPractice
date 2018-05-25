@@ -1,3 +1,5 @@
+import Stock.Accessories.AccessoryType;
+import Stock.Accessories.Mallet;
 import Stock.InstrumentType;
 import Stock.PercussionInstruments.Glockenspiel;
 import Stock.PercussionInstruments.Triangle;
@@ -11,12 +13,14 @@ public class ShopTest {
     Shop shop;
     Glockenspiel glockenspiel;
     Triangle triangle;
+    Mallet mallet;
 
     @Before
     public void before(){
         shop = new Shop();
-        glockenspiel = new Glockenspiel("titanium", "blue", InstrumentType.PERCUSSION, 20.20, 100);
+        glockenspiel = new Glockenspiel("titanium", "blue", InstrumentType.PERCUSSION, 20.20, 100, mallet);
         triangle = new Triangle("steel", "silver", InstrumentType.PERCUSSION, 12.00, 15.00);
+        mallet = new Mallet(15, 20, AccessoryType.MALLET, "Aqua", 12);
     }
 
     @Test
