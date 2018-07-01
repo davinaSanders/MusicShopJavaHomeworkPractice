@@ -1,4 +1,4 @@
-This model of a Music shop structure demonstrates:
+This model of a Music Shop structure demonstrates:
 * **unit testing** as part of a TDD approach
 * **composition** to realistically illustrate the type of association between accessory and instrument classes
 * appropriate use of **packages** for organisation of code. 
